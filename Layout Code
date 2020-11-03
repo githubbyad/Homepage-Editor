@@ -1,0 +1,53 @@
+{{LayoutArticleGroup717Begin}}
+{{LayoutArticleGroup717Limit1}}
+{{File:hpeditor.htm}}
+<html>
+<head>
+<title>Home Page Editor</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<script type="text/javascript" src="https://bulletlink.com/JQuery/jquery.js"></script>
+<link type="text/css" rel="stylesheet" href="{{PutHName}}/ufields.css">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+<script>
+$(document).ready(function(){
+	$('.hpx-iframe').css('height',$(window).height() - $('.hpx-header').innerHeight());
+});
+$(window).bind('load',function(){
+	$('.hpx-iframe').css('height',$(window).height() - $('.hpx-header').innerHeight());
+});
+$.myhpe = function() {
+	$('.hpx-loader').animate({opacity: 0}, 400, function() {
+		$('.hpx-loader').css('display','none');
+	});
+	$('.hpx-iframe').css('visibility','visible');
+	$('.hpx-iframe').animate({opacity: 1}, 400);
+};
+function display() {
+	$.myhpe();
+};
+</script>
+</head>
+<body class="hpx-main">
+	<div class="hpx-loader"></div>
+	<div class="hpx-wrapper">
+		<div class="hpx-header">
+			<div class="hpx-sm">
+				<a href="/responsibility.asp" title="Back to Site Manager"><i class="fa fa-angle-left" aria-hidden="true"></i>Site Manager</a>
+			</div>
+			<div class="hpx-label">Home Page Editor</div>
+			<div class="hpx-homepage">
+				<a href="{{Home}}?hle" target="_blank" title="View your site without Editor">Preview without Editor<i class="fa fa-external-link" aria-hidden="true"></i></a>
+			</div>
+		</div>
+		<iframe onload="display()" class="hpx-iframe" src="{{Home}}?hp_editor">
+	</div>
+</body>
+</html>
+{{RepeatBegin}}
+<div></div>
+{{RepeatEnd}}
+{{LayoutArticleGroup717End}}
