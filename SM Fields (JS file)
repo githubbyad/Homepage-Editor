@@ -1,12 +1,3 @@
-$(document).ready(function(){ // Editor Button
-	if(window.location.href.indexOf("/responsibility.asp") != -1){
-	  $('.my-form > center').html('<a class="sm-hp" href="/clients/bulletlink/staff-aai-22922/hpeditor.htm">Home Page Editor</a>');
-	}
-if(window.location.href.indexOf("pform=options_systems_staff") != -1){
-	$('.my-form fieldset').addClass('ss_remove');
-}
-	});
-	
 // BEGIN: Home Page Editor(hpeditor.htm)
 function OpenBLPopup(pageUrl, window_type, fwidth, fheight){
 	$.magnificPopup.open({
