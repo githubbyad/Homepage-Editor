@@ -1,3 +1,11 @@
+// Remove this JS when after Staff testing
+$(document).ready(function(){ // Editor Button
+	if(window.location.href.indexOf("/responsibility.asp") != -1){
+		$('.my-form > center').html('<a class="sm-hp" href="/clients/bulletlink/staff-aai-22922/hpeditor.htm">Home Page Editor</a>');
+	}
+});
+// Remove this JS when after Staff testing
+
 // BEGIN: Home Page Editor(hpeditor.htm)
 function OpenBLPopup(pageUrl, window_type, fwidth, fheight){
 	$.magnificPopup.open({
