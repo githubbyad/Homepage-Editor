@@ -1,3 +1,15 @@
+/* Remove this CSS when testing done */
+.sm-hp {
+	  color: white !important;
+	  font-family: Verdana !important;
+	  background: linear-gradient(180deg,#243238 50%,#000 100%);
+	  line-height: 50px;
+	  display: inline-block;
+	  padding: 0 20px;
+	  border-radius: 7px;
+}
+/* Remove this CSS when testing done */
+
 /* BEGIN: Home Page Editor(hpeditor.htm) */
 .hpx-main {
 	width: 100%;
