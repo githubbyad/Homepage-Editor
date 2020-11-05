@@ -1,0 +1,459 @@
+<html>
+    <head>
+        <title>Homepage Editor - Instructions</title>
+        <script type="text/javascript" language="javascript" src="https://bulletlink.com/bl.js"></script>
+        <script type="text/javascript" language="javascript" src="https://bulletlink.com/JQuery/jquery.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">  
+        <link rel="stylesheet" href="https://bulletlink.com/JQuery/popup1/popup1.css" type="text/css">
+        <script src="https://bulletlink.com/JQuery/popup1/popup1.js"></script>
+        <script type="text/javascript" language="javascript" src="https://bulletlink.com/JQuery/CSSMessageBox/js/jquery.alerts.js"></script>
+        <link rel="stylesheet" href="https://bulletlink.com/JQuery/CSSMessageBox/css/jquery.alerts.css">
+        <script>
+            function copyic(id) {
+	         let textarea = document.getElementById(id);
+	            textarea.select();
+                document.execCommand("copy");
+                alert('Code Copied');
+            }
+        </script>
+        <style>
+            .int-body {
+                font-family: 'Didact Gothic', sans-serif;;
+            }
+            .int-body {
+                background:gray;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.int-main {
+  box-sizing: border-box;
+  float: none;
+  width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.int-head {
+	width: 100%;
+	text-align: center;
+}
+.int-inner {
+    background-color: white;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='32' viewBox='0 0 16 32'%3E%3Cg fill='%23c9d1cb' fill-opacity='0.16'%3E%3Cpath fill-rule='evenodd' d='M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z'/%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	width: 100%;
+	float: left;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 10px;
+	box-sizing: border-box;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.int-ta {
+	width: 800px;
+	border-radius: 3px;
+	border: 1px solid #b1b1b1;
+	padding: 5px;
+	box-sizing: border-box;
+	margin-left: 20px;
+	background: #ddd;
+	color: black;
+}
+.int-steps {
+	padding-left: 10px;
+	box-sizing: border-box;
+	padding-right: 10px;
+}
+.int-table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 1100px;
+	margin-left: 20px;
+}
+.int-table td {
+	border: 1px solid #90caf9;
+	padding: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.int-table tr td:nth-child(1) {
+	background: #ebebeb;
+	font-weight: bold;
+	font-family: Trebuchet Ms;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.int-th td {
+    background: #243238 !important;
+	color: #90caf9 !important;
+	font-weight: bold;
+	line-height: 50px;
+	text-align: center;
+	font-family: Trebuchet MS;
+	font-size: 16px;
+}
+.int-table tr td:nth-child(3) {
+	color: #3c3cf2;
+}
+.int-th td {
+	min-width: 100px;
+}
+.int-th td:nth-child(3) {
+	min-width: 180px;
+}
+.int-th td:nth-child(1) {
+	min-width: 120px;
+}
+.int-table img {
+	max-width: 200px;
+	cursor: zoom-in;
+	border: 1px solid #dedede;
+	border-radius: 5px;
+}
+.int-table img:hover {
+	border-color: #243238;
+}
+.int-table td i {
+	color: black;
+	font-weight: normal;
+	font-size: 12px;
+}
+.int-table td r {
+	font-weight: bold;
+}
+.int-table tr td:nth-child(2) {
+	min-width: 110px;
+	color: green;
+}
+#popup_title {
+  display: none;
+}
+#popup_container {
+  box-shadow: 0 0 0 4000px rgba(0,0,0,0.5);
+}
+#popup_message {
+	font-family: Trebuchet MS;
+}
+#popup_ok {
+	color: #fff;
+	font-weight: bold;
+	font-family: Trebuchet MS;
+	background: #1e5dd5 !important;
+	font-size: 12px !important;
+	padding: 0 30px;
+	line-height: 30px;
+}
+#popup_container {
+	background: white !important;
+	border-radius: 5px;
+	min-width: 200px !important;
+	max-height: 200px !important;
+}
+button {
+	border-width: 0 !important;
+	background: #1e5dd5;
+	color: white;
+	line-height: 32px;
+	margin-left: 20px;
+	display: inline-block;
+	margin-top: 10px;
+	border-radius: 5px;
+	padding: 0 30px;
+	box-shadow: 0 5px 6px rgba(0,0,0,0.2);
+	cursor: pointer;
+	font-weight: bold;
+	font-family: Trebuchet MS;
+	transition: 300ms linear;    
+}
+button:hover {
+	background: #444;
+	transition: 300ms linear;
+}
+.et {
+	text-align: center;
+	font-weight: bold;
+}
+.int-tr:hover, .int-tr:hover td:nth-child(1) {
+	background: linear-gradient(180deg,#eee 50%,#fff 90%) !important;
+	transition: 300ms linear;
+}
+.int-inner {
+	/*background: white;*/
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+::selection {
+	background: #243238;
+	color: #90caf9;
+}
+#head {
+height: 49px;
+overflow: hidden;
+}
+.mfp-bg.mfp-ready {
+	background: white;
+	opacity: 0.8;
+}
+.mfp-image-holder .mfp-close {
+	background: red;
+	font-weight: normal !important;
+}
+.rnd {
+  position: absolute;
+  margin-left: -40px;
+  background: #243238;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+  color: white;
+  align-items: center;
+  margin-top: -2px;
+}
+.int-steps {
+  margin-left: 50px;
+}
+.int-para span {
+	margin-left: 25px;
+}
+.int-g-div {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin-left: 19px;
+}
+.int-git {
+	text-decoration: none !important;
+	background: #6ead7c;
+	padding: 0 20px;
+	line-height: 40px;
+	display: inline-block;
+	border-radius: 3px;
+	color: white !important;
+	box-shadow: 0px 4px 4px #00000030;
+	font-size: 14px;
+	font-family: Trebuchet MS;
+}
+.int-git:hover {
+	background: #94d3a2;
+}
+        </style>
+    </head>
+    <body class="int-body">
+        <div class="int-main">
+            <div class="int-inner">
+                <div class="int-head">
+                    <h1>Homepage Editor - Instructions</h1><br><br>
+                    <br><br>
+                </div>
+                <div class="int-wrap">
+                    <div class="int-para">
+                        <span>Here are the steps to apply <b>"Homepage Editor"</b> feature on any website.</span><br><br><br>
+                        <div class="int-steps">
+                            <b class="rnd">1</b> Add below <b style="color:blue">JS</b> and <b style="color:red">CSS</b> statements in homepage's <b>head</b> part. You can also place it in <b>"HTML Head Section"</b> field. Once it's done, just update indexes.<br><br>
+<div class="int-g-div"><a class="int-git" href="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/%3Chead%3E" target="_blank">Click to see Head Code</a></div><br><br><br><br>
+                            <b class="rnd">2</b> Add below <b style="color:blue">JS</b> in <b>"SM Fields (JS file)"</b> field under <b>"Settings - Staff"</b>. <br><Br>
+                                <div class="int-g-div"><a class="int-git" href="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/SM%20Fields%20(JS%20file)" target="_blank">Click to see JS Code</a></div><br><br><br><br>
+                            <b class="rnd">3</b> Add below <b style="color:red">CSS</b> in <b>"SM Fields (CSS file)"</b> field under <b>"Settings - Staff"</b>. <br><Br>
+                                <div class="int-g-div"><a class="int-git" href="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/SM%20Fields%20(CSS%20file)" target="_blank">Click to see CSS Code</a></div><br><br><br><br>
+                            <b class="rnd">4</b> Add below layout code in <b>"Layouts"</b> field under <b>"Settings - Staff"</b>. Once it's done, submit one article. <br><Br>
+                                <div class="int-g-div"><a class="int-git" href="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/Layout%20Code" target="_blank">Click to see Layout Code</a></div><br><br><br><br>
+                            <b class="rnd">5</b> Add Class in below provided Categories. Make sure to place classes in <b>Parent DIV</b>. Here Parent DIV means main DIV which includes all contents(DIVs) inside. If there is no Parent DIV created, then create it first.<br><br>
+                            <table class="int-table">
+                                <tbody>
+                                    <tr class="int-th">
+                                        <td>Category</td>
+                                        <td>Class</td>
+                                        <td>Attributes</td>
+                                        <td>Comments</td>
+                                        <td>Screenshot</td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Logo</td>
+                                        <td class="et">-</td>
+                                        <td class="et">-</td>
+                                        <td>No need to add Class, it will come from system. Just submit "Settings" screen.</td>
+                                        <td class="et">-</td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>AdGroups</td>
+                                        <td class="et">-</td>
+                                        <td class="et">-</td>
+                                        <td>No need to add Class. Just submit one Ad from each AdGroups.</td>
+                                        <td class="et">-</td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Highlights</td>
+                                        <td>hpe-hl<r>??</r></td>
+                                        <td class="et">-</td>
+                                        <td>Where <r>??</r> is Highlight numbers. For Highlight1, you can Add Class "hpe-hl1".</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-hl.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-hl.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Menus</td>
+                                        <td>hpe-menu</td>
+                                        <td class="et">-</td>
+                                        <td>Add this menu in menu layout. Use same class for Sandwich & Footer menus.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-menu.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-menu.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Previews</td>
+                                        <td>hpe-prev</td>
+                                        <td>data-menu="{{Menu}}"<br>data-submenu="{{SubMenu}}"</td>
+                                        <td>Add Class and both Attributes in same Parent DIV. See screenshot.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-prev.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-prev.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Previews<br><i>(Highlight Excluded)</i></td>
+                                        <td>hpe-<r>x</r>prev</td>
+                                        <td>data-menu="{{Menu}}"<br>data-submenu="{{SubMenu}}"</td>
+                                        <td>Add Class and both Attributes in same Parent DIV. See screenshot.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-xprev.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-xprev.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>ArticleGroup</td>
+                                        <td>hpe-artgroup</td>
+                                        <td class="et">-</td>
+                                        <td>Add Class in Parent DIV.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-artgroup.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-artgroup.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>ArticleGroup<br><i>(Highlight Excluded)</i></td>
+                                        <td>hpe-<r>x</r>artgroup</td>
+                                        <td class="et">-</td>
+                                        <td>Add Class in Parent DIV.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-xartgroup.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-xartgroup.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>ArticleGroup<br><i>(Only 1 Submenu)</i></td>
+                                        <td>hpe-prev</td>
+                                        <td>data-menu="{{Menu}}"<br>data-submenu="{{SubMenu}}"</td>
+                                        <td>Add Class and both Attributes in same Parent DIV. This will be for ArticleGroup where we have included only 1 sub-menu. See screenshot.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-prev1.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-prev1.png','image');" title="Click to Enlarge" alt="Template#124 Footer"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Events <i>(New)</i></td>
+                                        <td>hpe-event</td>
+                                        <td>data-menu="{{Menu}}"<br>data-submenu="{{SubMenu}}"</td>
+                                        <td>Add Class and both Attributes in same Parent DIV. </td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-event.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-event.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>PhotoGallery</td>
+                                        <td>hpe-photo-g</td>
+                                        <td>data-menu="{{Menu}}"<br>data-submenu="{{SubMenu}}"</td>
+                                        <td>Add Class and both Attributes in same Parent DIV. </td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-photo-g.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-photo-g.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>PhotoGallery <i>(Old)</i></td>
+                                        <td class="et">-</td>
+                                        <td class="et">-</td>
+                                        <td>No need to add Class as it will get added through JS.</td>
+                                        <td class="et">-</td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>VideoGallery<br><i>(YouTube - ID)</i></td>
+                                        <td>hpe-video-g-yt-id</td>
+                                        <td>data-menu="{{Menu}}"<br>data-submenu="{{SubMenu}}"</td>
+                                        <td>Add Class and both Attributes in same Parent DIV. </td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-video-g-yt-id.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-video-g-yt-id.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>VideoGallery<br><i>(YouTube - URL)</i></td>
+                                        <td>hpe-video-g-yt-url</td>
+                                        <td>data-menu="{{Menu}}"<br>data-submenu="{{SubMenu}}"</td>
+                                        <td>Add Class and both Attributes in same Parent DIV. </td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-video-g-yt-url.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-video-g-yt-url.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>VideoGallery<br><i>(YouTube - Code)</i></td>
+                                        <td>hpe-video-g-yt-code</td>
+                                        <td>data-menu="{{Menu}}"<br>data-submenu="{{SubMenu}}"</td>
+                                        <td>Add Class and both Attributes in same Parent DIV. </td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-video-g-yt-code.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-video-g-yt-code.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Poll</td>
+                                        <td class="et">-</td>
+                                        <td class="et">-</td>
+                                        <td>No need to add Class as it will get added through JS.</td>
+                                        <td class="et">-</td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Top Links</td>
+                                        <td>hpe-top-links</td>
+                                        <td class="et">-</td>
+                                        <td>Add Class in Parent DIV.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-top-links.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-top-links.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Bottom Links</td>
+                                        <td>hpe-bottom-links</td>
+                                        <td class="et">-</td>
+                                        <td>Add Class in Parent DIV.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-bottom-links.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-bottom-links.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Social Links</td>
+                                        <td>hpe-social</td>
+                                        <td class="et">-</td>
+                                        <td>Add Class in Parent DIV.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-social.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-social.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Search Box</td>
+                                        <td>hpe-gsearch</td>
+                                        <td class="et">-</td>
+                                        <td>Add Class in Parent DIV.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-gsearch.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-gsearch.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Hit Counter</td>
+                                        <td class="et">-</td>
+                                        <td class="et">-</td>
+                                        <td>No need to add Class as it will get added through JS.</td>
+                                        <td class="et">-</td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Copyright</td>
+                                        <td class="et">-</td>
+                                        <td class="et">-</td>
+                                        <td>No need to add Class as it will get added through JS.</td>
+                                        <td class="et">-</td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Contact Information</td>
+                                        <td class="et">-</td>
+                                        <td class="et">-</td>
+                                        <td>No need to add Class as it will get added through JS.</td>
+                                        <td class="et">-</td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Email</td>
+                                        <td>hpe-email</td>
+                                        <td class="et">-</td>
+                                        <td>Add Class in Parent DIV.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-email.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-email.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                    <tr class="int-tr">
+                                        <td>Phone</td>
+                                        <td>hpe-phone</td>
+                                        <td class="et">-</td>
+                                        <td>Add Class in Parent DIV.</td>
+                                        <td><img src="https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-phone.png" onclick="OpenPopup3('https://raw.githubusercontent.com/githubbyad/Homepage-Editor/main/screenshots/hpe-phone.png','image');" title="Click to Enlarge"></td>
+                                    </tr>
+                                </tbody>
+                            </table><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
