@@ -3,7 +3,9 @@ $(document).ready(function(){ // Editor Button
 	if(window.location.href.indexOf("/responsibility.asp") != -1){
 		$('.smicon_links1').each(function(){
 			if($(this).text() == "Home") {
-				$('.my-form > center').html('<a class="sm-hp" href="' + $(this).attr('href') + '/hpeditor.htm">Home Page Editor</a>');
+				var a = $(this).attr('href');
+        		var b = a.substring(0, a.lastIndexOf('/'));
+				$('.my-form > center').html('<a class="sm-hp" href="' + b + '/hpeditor.htm">Home Page Editor</a>');
 			}
 		});
 	}
