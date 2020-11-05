@@ -1,7 +1,11 @@
 // Remove this JS after Staff testing
 $(document).ready(function(){ // Editor Button
 	if(window.location.href.indexOf("/responsibility.asp") != -1){
-		$('.my-form > center').html('<a class="sm-hp" href="/clients/bulletlink/staff-aai-22922/hpeditor.htm">Home Page Editor</a>');
+		$('.smicon_links1').each(function(){
+			if($(this).text() == "Home") {
+				$('.my-form > center').html('<a class="sm-hp" href="' + $(this).attr('href') + '/hpeditor.htm">Home Page Editor</a>');
+			}
+		});
 	}
 });
 // Remove this JS after Staff testing
