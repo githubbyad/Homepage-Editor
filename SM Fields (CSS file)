@@ -1,4 +1,4 @@
-/* Remove this CSS when after Staff testing */
+/* Remove this CSS after Staff testing */
 .sm-hp {
 	  color: white !important;
 	  font-family: Verdana !important;
@@ -8,7 +8,7 @@
 	  padding: 0 20px;
 	  border-radius: 7px;
 }
-/* Remove this CSS when after Staff testing */
+/* Remove this CSS after Staff testing */
 
 /* BEGIN: Home Page Editor(hpeditor.htm) */
 .hpx-main {
