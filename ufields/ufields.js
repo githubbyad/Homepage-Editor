@@ -4208,3 +4208,409 @@ $(document).ready(function() {
 });
 
 // END: Live Builder(Site Manager)
+
+
+// BEGIN:  Live Builder - Style
+
+$(document).ready(function() {
+
+    // Textarea
+    var txt = 'textarea';
+
+    // Popup header
+    var hr = 'Live Builder - Style';
+
+    // Fonts
+    var hps_font = ['Arial', 'Georgia', 'Times', 'Verdana', 'Abril FatFace', 'Alegreya', 'Arvo', 'BioRhyme', 'Cairo', 'Cardo', 'Concert One', 'Exo 2', 'Fjalla One', 'Lato', 'Lora', 'Nunito', 'Old Standard TT', 'Oswald', 'Roboto', 'Rubik', 'Source Sans', 'Titillium Web', 'Vollkorn'];
+    var font_list = '';
+    for (i = 0; i < hps_font.length; i++) {
+        font_list = font_list + '<option value="' + hps_font[i] + '">' + hps_font[i] + '</option>';
+    }
+
+    // RGB to Hex
+    function rgb2hex(orig) {
+        var rgb = orig.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+)/i);
+        return (rgb && rgb.length === 4) ? "#" +
+            ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) +
+            ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
+            ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : orig;
+    }
+
+    // Poll - Style
+    $('.polls1body').attr('data-id', 'hpe-polls1body');
+    $('.polls1body').attr('data-css', '$background-color$');
+    $('.polls1body').attr('data-block', 'd-inline p-relative');
+    $('.polls1title').attr('data-id', 'hpe-polls1title');
+    $('.polls1title').attr('data-css', '$background-color$font-size$color$font-weight$font-style$font-family$text-transform$text-align$text-decoration$');
+    $('.polls1title').attr('data-block', 'd-block p-relative');
+    $('div.polls1question').attr('data-id', 'hpe-polls1question');
+    $('div.polls1question').attr('data-css', '$font-size$color$font-weight$font-style$font-family$text-transform$text-align$text-decoration$');
+    $('div.polls1question').attr('data-block', 'd-inline p-relative');
+    $('table.polls1question').attr('data-id', 'hpe-polls1question-body');
+    $('table.polls1question').attr('data-css', '$font-size$color$font-weight$font-style$font-family$text-transform$text-align$text-decoration$');
+    $('table.polls1question').attr('data-block', 'd-inline p-relative');
+
+    $('.polls1button').attr('data-id', 'hpe-polls1button');
+    $('.polls1button').attr('data-css', '$background-color$font-size$color$font-weight$font-style$font-family$text-transform$text-align$text-decoration$');
+    $('.polls1button').attr('data-block', 'd-inline p-relative');
+
+    if ($(document).width() > 1024) {
+
+        if (window.location.href.indexOf("?hps_editor") != -1 || window.location.href.indexOf("&hps_editor") != -1) {
+            // Hard reload for first time
+            /*if (!readCookie('hps_reload')) {
+                createCookie('hps_reload', 'Yes');
+                window.location.reload(true);
+            } */
+
+
+            // Poll - Style
+            $('.polls1button.polls1button_custom').replaceWith('<div class="poll-x-div"><div class="polls1button polls1button_custom" data-id="hpe-polls1button" data-css="$background-color$font-size$color$font-weight$font-style$font-family$text-transform$text-align$text-decoration$" data-block="d-inline p-relative">VOTE</div></div>');
+
+            // Create Separate Block
+            $('#blbodymain').append('<div id="hps-popup"></div>');
+            // Disable links & onclick
+            $('a').each(function() {
+                if ($(this).attr('href')) {
+                    $(this).attr('href', 'javascript:void(0);');
+                }
+                $(this).removeAttr('target');
+            });
+            $('*').each(function() {
+                if ($(this).attr('onclick')) {
+                    $(this).removeAttr('onclick');
+                }
+            });
+
+
+            // Theme
+            if (typeof SMThemeColor == 'function') {
+                if (SMThemeColor() == 'Yellow') { $('#blbodymain').attr('data-theme', 'Yellow'); }
+                if (SMThemeColor() == 'Blue') { $('#blbodymain').attr('data-theme', 'Blue'); }
+                if (SMThemeColor() == 'Brown') { $('#blbodymain').attr('data-theme', 'Brown'); }
+                if (SMThemeColor() == 'Purple') { $('#blbodymain').attr('data-theme', 'Purple'); }
+                if (SMThemeColor() == 'Orange') { $('#blbodymain').attr('data-theme', 'Orange'); }
+                if (SMThemeColor() == 'Olive') { $('#blbodymain').attr('data-theme', 'Olive'); }
+                if (SMThemeColor() == 'Magenta') { $('#blbodymain').attr('data-theme', 'Magenta'); }
+                if (SMThemeColor() == 'Green') { $('#blbodymain').attr('data-theme', 'Green'); }
+                if (SMThemeColor() == 'Red') { $('#blbodymain').attr('data-theme', 'Red'); }
+                if (SMThemeColor() == 'Black') { $('#blbodymain').attr('data-theme', 'Black'); }
+            }
+
+            // CSS variables
+            var bg = 'background';
+            var bg_c = 'background-color';
+
+            var f_c = 'color';
+            var f_s = 'font-size';
+            var f_w = 'font-weight';
+            var f_i = 'font-style';
+            var f_f = 'font-family';
+            var t_t = 'text-transform'
+            var t_a = 'text-align';
+            var t_d = 'text-decoration-line';
+
+            var br_c = 'border-color';
+            var br_t_c = 'border-top-color';
+            var br_b_c = 'border-bottom-color';
+            var br_l_c = 'border-left-color';
+            var br_r_c = 'border-right-color';
+
+            // Success Message
+            var smg = 'Success';
+
+
+            // Add custom attributes and spanel
+            $('[data-id*="hpe-"][data-css*="$"]').each(function() {
+                var zx = $(this).css('z-index');
+                if (zx == 'undefined' || zx == 'auto') {
+                    zx = 1;
+                    $(this).css('z-index', zx);
+                }
+                $(this).find('[data-id*="hpe-"][data-css*="$"]').css('z-index', parseInt(zx) + 1);
+                $(this).find('[data-id*="hpe-"][data-css*="$"]').attr('data-zx', parseInt(zx) + 1);
+                var block = $(this).attr('data-id');
+                if (!$(this).children('spanel').length) {
+                    $(this).prepend('<spanel data="' + block + '"></spanel>');
+                }
+            });
+
+            // Style Action Click Event
+            $('[data-id*="hpe-"]').children('spanel').each(function() {
+                var block = $(this).parent('[data-id*="hpe-"]').attr('data-id');
+                $(this).click(function() {
+                    if (!$('#hps-popup').children('.hps-form-div').length) {
+                        $('#hps-popup').append('<css-backup data-cb="' + block + '" style="display:none;"></css-backup>');
+                        $('#hps-popup').append('<div class="hps-form-div" data-cb="' + block + '"><iframe name="hidden_' + block + '" width="0" height="0" border="0" style="display: none;"></iframe><form class="hps-form" action="/hpe_form.asp?hpe=Y" method="post"  target="hidden_' + block + '" data-block-name="' + block + '"><div class="hps-header">' + hr + '</div><' + txt + ' style="display:none;" class="hpe_client_styles_begin" name="hpe_client_styles_begin"></' + txt + '><' + txt + ' style="display:none;" class="hpe_client_styles_fs" name="hpe_client_styles_fs"></' + txt + '><' + txt + ' style="display:none;" class="hpe_client_styles_g1" name="hpe_client_styles_g1"></' + txt + '><' + txt + ' style="display:none;" class="hpe_client_styles_g2" name="hpe_client_styles_g2"></' + txt + '><' + txt + ' style="display:none;" class="hpe_client_styles_g3" name="hpe_client_styles_g3"></' + txt + '><' + txt + ' style="display:none;" class="hpe_client_styles_end" name="hpe_client_styles_end"></' + txt + '><' + txt + ' style="display:none;" class="hpe_client_styles" name="hpe_client_styles"></' + txt + '><style></style><div class="hps-loader hps-dim"></div><div class="hps-success hps-dim"><div class="hpe-sucess-icon"><i class="fa fa-check-circle" aria-hidden="true"></i></div><div class="hps-success-message">' + smg + '</div></form></div>');
+
+
+                        // Drag form
+                        $('[data-block-name="' + block + '"]').draggable();
+
+
+                        // Font-Size
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + f_s + '$') != -1) {
+                            var p_c = f_s;
+                            var p_n = 'Font Size';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><input data-input="hps-input" type="range" min="10" max="50" value="' + v + '"><p-panel>' + v + '</panel></field-name>');
+                        }
+
+                        // Font-Weight
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + f_w + '$') != -1) {
+                            var p_c = f_w;
+                            var p_n = 'Font Weight';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><input data-input="hps-input" type="range" min="100" max="900" value="' + v + '"></field-name>');
+                        }
+
+                        // Font-Color
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + f_c + '$') != -1) {
+                            var p_c = f_c;
+                            var p_n = 'Font Color';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            if (v.indexOf('rgb') != -1) {
+                                v = rgb2hex(v);
+                            }
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><input data-input="hps-input" type="color" value="' + v + '"></field-name>');
+                        }
+
+                        // Font-Style
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + f_i + '$') != -1) {
+                            var p_c = f_i;
+                            var p_n = 'Font Style';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><select data-input="hps-input"><option selected value="' + v + '"><i class="fa fa-check-square" aria-hidden="true"></i> ' + v + '</option><option value="normal">normal</option><option value="italic">italic</option></select></field-name>');
+                        }
+                        // Font-Family
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + f_f + '$') != -1) {
+                            var p_c = f_f;
+                            var p_n = 'Font Family';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><select data-input="hps-input"><option selected value="' + v + '"><i class="fa fa-check-square" aria-hidden="true"></i> ' + v + '</option>' + font_list + '</select></field-name>');
+                        }
+
+                        // Text-Transform
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + t_t + '$') != -1) {
+                            var p_c = t_t;
+                            var p_n = 'Text Transform';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><select data-input="hps-input"><option selected value="' + v + '"><i class="fa fa-check-square" aria-hidden="true"></i> ' + v + '</option><option value="none">none</option><option value="capitalize">capitalize</option><option value="uppercase">uppercase</option><option value="lowercase">lowercase</option></select></field-name>');
+                        }
+
+                        // Text-Align
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + t_a + '$') != -1) {
+                            var p_c = t_a;
+                            var p_n = 'Text Alignment';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><select data-input="hps-input"><option selected value="' + v + '"><i class="fa fa-check-square" aria-hidden="true"></i> ' + v + '</option><option value="left">left</option><option value="right">right</option><option value="center">center</option><option value="justify">justify</option><option value="start">start</option><option value="end">end</option></select></field-name>');
+                        }
+
+                        // Text-Decoration
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$text-decoration$') != -1) {
+                            var p_c = t_d;
+                            var p_n = 'Text Decoration';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><select data-input="hps-input"><option selected value="' + v + '"><i class="fa fa-check-square" aria-hidden="true"></i> ' + v + '</option><option value="none">none</option><option value="underline">underline</option><option value="overline">overline</option><option value="line-through">line-through</option></select></field-name>');
+                        }
+
+                        // Background-Color
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + bg_c + '$') != -1) {
+                            var p_c = bg_c;
+                            var p_n = 'Background Color';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            if (v.indexOf('rgb') != -1) {
+                                v = rgb2hex(v);
+                            }
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><input data-input="hps-input" type="color" value="' + v + '"></field-name>');
+                        }
+
+                        // Border-All-Color
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + br_c + '$') != -1) {
+                            var p_c = br_t_c;
+                            var p_n = 'Border Color';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            if (v.indexOf('rgb') != -1) {
+                                v = rgb2hex(v);
+                            }
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><input data-input="hps-input" type="color" value="' + v + '"></field-name>');
+                        }
+
+                        // Border-top-Color
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + br_t_c + '$') != -1) {
+                            var p_c = br_t_c;
+                            var p_n = 'Border Top Color';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            if (v.indexOf('rgb') != -1) {
+                                v = rgb2hex(v);
+                            }
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><input data-input="hps-input" type="color" value="' + v + '"></field-name>');
+                        }
+
+                        // Border-Bottom-Color
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + br_b_c + '$') != -1) {
+                            var p_c = br_b_c;
+                            var p_n = 'Border Bottom Color';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            if (v.indexOf('rgb') != -1) {
+                                v = rgb2hex(v);
+                            }
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><input data-input="hps-input" type="color" value="' + v + '"></field-name>');
+                        }
+
+                        // Border-Left-Color
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + br_l_c + '$') != -1) {
+                            var p_c = br_l_c;
+                            var p_n = 'Border Left Color';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            if (v.indexOf('rgb') != -1) {
+                                v = rgb2hex(v);
+                            }
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><input data-input="hps-input" type="color" value="' + v + '"></field-name>');
+                        }
+
+                        // Border-Right-Color
+                        if ($(this).parent('[data-id*="' + block + '"]').attr('data-css').trim().indexOf('$' + br_r_c + '$') != -1) {
+                            var p_c = br_r_c;
+                            var p_n = 'Border Right Color';
+                            var v = $(this).parent('[data-id*="' + block + '"]').css('' + p_c + '');
+                            if (v.indexOf('rgb') != -1) {
+                                v = rgb2hex(v);
+                            }
+                            $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<field-name data-cb="' + block + '" data-name="' + p_c + '" data-value="' + v + '"><label-name>' + p_n + '</label-name><input data-input="hps-input" type="color" value="' + v + '"></field-name>');
+                        }
+
+
+
+                        // Form Buttons (Put this in the end)
+                        $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').append('<form-button><form-submit-button data-cb="' + block + '">APPLY</form-submit-button><form-clear-button data-cb="' + block + '">CLEAR</form-clear-button><form-cancel-button data-cb="' + block + '"></form-cancel-button></form-button>');
+
+                        /*// Remove Duplicate value from Drop-Down
+                        var map = {};
+                        $('field-name select option').each(function() {
+                            if (map[this.value]) {
+                                $(this).remove()
+                            }
+                            map[this.value] = true;
+                        });*/
+
+                        eraseCookie('HpeClientStyles');
+                        //$(this).siblings('.hps-form-div').addClass('hps-form-div-active');
+                        $('#hps-popup').children('.hps-form-div[data-cb="' + block + '"]').children('.hps-form').addClass('hps-form-up');
+                        setTimeout(function() {
+                            $('.hps-form').removeClass('hps-form-up');
+                        }, 600);
+
+                        // On Change Input Values
+                        $('[data-input="hps-input"]').each(function() {
+                            $(this).change(function() {
+                                // Set updated values in parent 'field-name'
+                                if ($(this).parent('field-name').attr('data-name').indexOf('font-size') != -1) { // If font-size, then add 'px'
+                                    $(this).parent('field-name').attr('data-value', $(this).val() + 'px');
+                                    $(this).siblings('p-panel').text($(this).val() + ' px');
+                                } else { // Other field
+                                    $(this).parent('field-name').attr('data-value', $(this).val());
+                                }
+                                // Clean previous CSS
+                                $(this).parent('field-name').siblings('.hpe_client_styles_fs').val('');
+                                $(this).parent('field-name').siblings('.hpe_client_styles_g2').val('');
+                                // Add values in Textarea
+                                $('[data-input="hps-input"]').each(function() {
+                                    if ($(this).parent('field-name').attr('data-name').indexOf('font-size') != -1) { // If Font-Size, then add Media
+                                        var fpath = $(this).parent('field-name').attr('data-name') + ": " + $(this).parent('field-name').attr('data-value') + "!important; ";
+                                        $(this).parent('field-name').siblings('.hpe_client_styles_fs').val('@media screen and (min-width: 1025px) {\n[data-id="' + block + '"] {\n' + fpath + '\n}\n}\n');
+                                    } else { // If other fields
+                                        var cpath = $(this).parent('field-name').attr('data-name') + ": " + $(this).parent('field-name').attr('data-value') + "!important; ";
+                                        $(this).parent('field-name').siblings('.hpe_client_styles_g2').val($(this).parent('field-name').siblings('.hpe_client_styles_g2').val() + cpath + '\n');
+                                    }
+                                });
+                                // headers
+                                $(this).parent('field-name').siblings('.hpe_client_styles_begin').val('/* BEGIN: [data-id="' + block + '"] */\n');
+                                $(this).parent('field-name').siblings('.hpe_client_styles_end').val('/* END: [data-id="' + block + '"] */');
+                                $(this).parent('field-name').siblings('.hpe_client_styles_g1').val('[data-id="' + block + '"] {\n');
+                                $(this).parent('field-name').siblings('.hpe_client_styles_g3').val('}\n');
+                                // Add to Style
+                                $(this).parent('field-name').siblings('.hpe_client_styles').val($(this).parent('field-name').siblings('.hpe_client_styles_begin').val() + $(this).parent('field-name').siblings('.hpe_client_styles_fs').val() + $(this).parent('field-name').siblings('.hpe_client_styles_g1').val() + $(this).parent('field-name').siblings('.hpe_client_styles_g2').val() + $(this).parent('field-name').siblings('.hpe_client_styles_g3').val() + $(this).parent('field-name').siblings('.hpe_client_styles_end').val());
+                                $(this).parent('field-name').siblings('style').replaceWith('<style>' + $(this).parent("field-name").siblings(".hpe_client_styles").val() + '</style>');
+                            });
+                        });
+
+                        // Submit Button Click
+                        $('form-submit-button').each(function() {
+                            $(this).click(function() {
+                                if ($(this).parent('form-button').siblings('.hpe_client_styles').val() == '') { // If No changes made, then cancel form
+                                    $(this).siblings('form-cancel-button').click();
+                                } else {
+                                    $('#hps-popup').children('css-backup[data-cb="' + $(this).attr('data-cb') + '"]').html("<style>" + $(this).parent('form-button').siblings('style').html() + "</style>");
+                                    $(this).parent('form-button').parent('form.hps-form').submit();
+                                    $('field-name, form-submit-button, form-clear-button').addClass('hps-dim');
+                                    $('.hps-loader').removeClass('hps-dim');
+                                    var sb = setInterval(function() {
+                                        if (readCookie('HpeClientStyles')) { // After Style Applied
+                                            clearInterval(sb);
+                                            eraseCookie('HpeClientStyles');
+                                            $('.hps-loader').addClass('hps-dim');
+                                            $('.hps-success').removeClass('hps-dim');
+                                            setTimeout(function() {
+                                                $('.hps-success').removeClass('hps-success-up hps-success-down');
+                                                $('#hps-popup').children('.hps-form-div').remove();
+                                                $('.hps-form').addClass('hps-form-down');
+                                                setTimeout(function() {
+                                                    $('field-name, form-submit-button').removeClass('hps-dim');
+                                                    $('.hps-success').addClass('hps-dim');
+                                                    $('.hps-form').removeClass('hps-form-up hps-form-down');
+                                                }, 300);
+                                            }, 1500);
+                                        }
+                                    }, 10);
+                                }
+                            });
+                        });
+
+                        // Clear Button Click
+                        $('form-clear-button').each(function() {
+                            $(this).click(function() {
+                                $(this).parent('form-button').siblings('.hpe_client_styles').val('/* BEGIN: [data-id="' + block + '"] */\n/* END: [data-id="' + block + '"] */');
+                                $(this).parent('form-button').siblings('style').replaceWith('<style>' + $(this).parent('form-button').siblings(".hpe_client_styles").val() + '</style>');
+                                $('#hps-popup').children('css-backup[data-cb="' + $(this).attr('data-cb') + '"]').html("<style>" + $(this).parent('form-button').siblings('style').html() + "</style>");
+                                $(this).parent('form-button').parent('form.hps-form').submit();
+                                $('field-name, form-submit-button, form-clear-button').addClass('hps-dim');
+                                $('.hps-loader').removeClass('hps-dim');
+                                var sb = setInterval(function() {
+                                    if (readCookie('HpeClientStyles')) { // After Style Applied
+                                        clearInterval(sb);
+                                        eraseCookie('HpeClientStyles');
+                                        $('.hps-loader').addClass('hps-dim');
+                                        $('.hps-success').removeClass('hps-dim');
+                                        setTimeout(function() {
+                                            $('.hps-success').removeClass('hps-success-up hps-success-down');
+                                            window.location.href = window.location.href;;
+                                        }, 1500);
+                                    }
+                                }, 10);
+                            });
+                        });
+
+                        // Cancel Button Click
+                        $('form-cancel-button').each(function() {
+                            $(this).click(function() {
+                                eraseCookie('HpeClientStyles');
+                                $(this).parent('form-button').siblings('.hpe_client_styles').val(''); // Clear Current CSS
+                                $(this).parent('form-button').siblings('style').text('');
+                                $('.hps-form').addClass('hps-form-down');
+                                setTimeout(function() {
+                                    $('field-name, form-submit-button').removeClass('hps-dim');
+                                    $('.hps-form').removeClass('hps-form-up hps-form-down');
+                                    $('#hps-popup').children('.hps-form-div').remove();
+                                }, 300);
+                            });
+                        });
+                    }
+                });
+            });
+
+        }
+    }
+});
+
+// END:  Live Builder - Style
