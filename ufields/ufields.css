@@ -2379,7 +2379,9 @@ body.hpx-main .hpx-homepage .hpx-manage-submenu a:hover {
         -webkit-transform: rotate(0deg);
     }
 }
-
+more {
+	display:inline-block;
+}
 
 /* END: Live Builder(Site Manager) */
 
