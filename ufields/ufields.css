@@ -672,7 +672,7 @@
     line-height: 25px !important;
 }
 
-.hp-hide-delete .hp-y .hp-z .hp-span a[title*="Delete"] {
+.hp-hide-delete .hp-y .hp-z .hp-span a[title*="Delete"], .hp-hide-delete .hp-y .hp-z .hp-span a[title*="Hide"] {
     opacity: 0.5;
     pointer-events: none;
 }
