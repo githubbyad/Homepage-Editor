@@ -2380,5 +2380,9 @@ body.hpx-main .hpx-homepage .hpx-manage-submenu a:hover {
     }
 }
 
+more {
+    display: inline-block;
+}
+
 
 /* END: Live Builder(Site Manager) */
