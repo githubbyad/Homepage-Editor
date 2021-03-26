@@ -1098,25 +1098,25 @@ $(document).ready(function() {
             // Social
             if ($('.hpe-social').length) {
                 $('.hpe-social').addClass('hp-ppp');
-                var hlp = "Click on 'EDIT' button/icon and provide us social media links.<br>We will update it within few minutes."
+                var hlp = "The changes here can to be done via support ticket. Tell us what changes you like and click on submit to create support ticket."
                 $('.hpe-social.hp-x .hp-y').append('<div class="hp-z"><div class="hp-span"><a href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=SupportTickets&lid2=&level=1&pform=support_tickets&pkeyname=ticket_id&pkey=&fkeyname=&fkey=&eflag=Yes&wpage=&hpath=&smid=&u=&c=&lf=&x=#hpe_social\',\'iframe\');" title="Edit Social Media Links"><i class="fa fa-pencil" aria-hidden="true"></i><b class="hp-llable">Edit</b></a><a class="hp-help hp-tt" href="#hp_editor" title="' + hlp + '"><i class="fa fa-question-circle" aria-hidden="true"></i><b class="hp-llable">Help</b></a></div><header class="hp-hheader">Social Links</header></div>');
             }
             // Bottom Links
             if ($('.hpe-bottom-links').length) {
                 $('.hpe-bottom-links').addClass('hp-ppp');
-                var hlp = "You can write us to add/update/delete links.";
+                var hlp = "The changes here can to be done via support ticket. Tell us what changes you like and click on submit to create support ticket.";
                 $('.hpe-bottom-links.hp-x .hp-y').append('<div class="hp-z"><div class="hp-span"><a href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=SupportTickets&lid2=&level=1&pform=support_tickets&pkeyname=ticket_id&pkey=&fkeyname=&fkey=&eflag=Yes&wpage=&hpath=&smid=&u=&c=&lf=&x=#hpe_bottom_links\',\'iframe\');" title="Edit Links"><i class="fa fa-pencil" aria-hidden="true"></i><b class="hp-llable">Edit</b></a><a class="hp-help hp-tt" href="#hp_editor" title="' + hlp + '"><i class="fa fa-question-circle" aria-hidden="true"></i><b class="hp-llable">Help</b></a></div><header class="hp-hheader">Bottom Links</header></div>');
             }
             // Top Links
             if ($('.hpe-top-links').length) {
                 $('.hpe-top-links').addClass('hp-ppp');
-                var hlp = "You can write us to add/update/delete links.";
+                var hlp = "The changes here can to be done via support ticket. Tell us what changes you like and click on submit to create support ticket.";
                 $('.hpe-top-links.hp-x .hp-y').append('<div class="hp-z"><div class="hp-span"><a href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=SupportTickets&lid2=&level=1&pform=support_tickets&pkeyname=ticket_id&pkey=&fkeyname=&fkey=&eflag=Yes&wpage=&hpath=&smid=&u=&c=&lf=&x=#hpe_top_links\',\'iframe\');" title="Edit Links"><i class="fa fa-pencil" aria-hidden="true"></i><b class="hp-llable">Edit</b></a><a class="hp-help hp-tt" href="#hp_editor" title="' + hlp + '"><i class="fa fa-question-circle" aria-hidden="true"></i><b class="hp-llable">Help</b></a></div><header class="hp-hheader">Top Links</header></div>');
             }
             // Google Custom Search
             if ($('.hpe-gsearch').length) {
                 $('.hpe-gsearch').addClass('hp-ppp');
-                var hlp = "Please write us if it will not show results from your site.";
+                var hlp = "The changes here can to be done via support ticket. Tell us what changes you like and click on submit to create support ticket.";
                 $('.hpe-gsearch.hp-x .hp-y').append('<div class="hp-z"><div class="hp-span"><a href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=SupportTickets&lid2=&level=1&pform=support_tickets&pkeyname=ticket_id&pkey=&fkeyname=&fkey=&eflag=Yes&wpage=&hpath=&smid=&u=&c=&lf=&x=#hpe_gsearch\',\'iframe\');" title="Any issues with Search?"><i class="fa fa-pencil" aria-hidden="true"></i><b class="hp-llable">Edit</b></a><a class="hp-help hp-tt" href="#hp_editor" title="' + hlp + '"><i class="fa fa-question-circle" aria-hidden="true"></i><b class="hp-llable">Help</b></a></div><header class="hp-hheader">Search Bar</header></div>');
             }
             // Forms
@@ -4208,4 +4208,3 @@ $(document).ready(function() {
 });
 
 // END: Live Builder(Site Manager)
-
