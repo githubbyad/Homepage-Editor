@@ -108,7 +108,7 @@ $(document).ready(function() {
         var pext = '.a' + lngl;
         var fx = 'form';
         var dx = 'delete';
-        var dl1 = '<center>Do you want to delete selected';
+        var dl1 = '<center>Do you want to delete this';
         var dl2 = '?<br><br>This operation cannot be undone.</center>';
         var pfist = fx + lngn + lngl + '?';
         var pdist = dx + lngn + lngl + '?';
@@ -475,7 +475,7 @@ $(document).ready(function() {
                         }
                     }
                     var dk = $(this).attr('data-link');
-                    $(this).children('.hp-y').append('<div class="hp-z"><div class="hp-span"><a title="Edit Menu" href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=Menu&lid2=&level=1&pform=Menu&pkeyname=sys_menu_id&pkey=' + mk + '&fkeyname=&fkey=&wpage=&hpath=&eflag=Yes&fa=&sflag=&sortflag=&smid=&u=&c=&lf=&x=&hpe=Y#hpe_in_menu_x\',\'iframe\');"><i class="fa fa-pencil" aria-hidden="true"></i></a><a title="Add New Menu" href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=Menu&lid2=&level=1&pform=Menu&pkeyname=sys_menu_id&pkey=&fkeyname=&fkey=&eflag=Yes&wpage=&hpath=&smid=&u=&c=&lf=&x=&hpe=Y&vpx=' + dv + '&fpx=' + mon + '#hpe_in_new_menu\',\'iframe\');"><i class="fa fa-plus" aria-hidden="true"></i></a><a class="hp-menudelete" title="Delete Menu" href="#hp_editor" onclick="return confirmdelete(\'' + dl1 + ' all Submenus below in order to delete this Menu' + dl2 + '\', \'/' + pdist + 'lid=Menu&lid2=&level=1&pform=Menu&dname=Menu&pkeyname=sys_menu_id&pkey=' + mk + '&wpage=1&hpath=&sflag=&sortflag=&fa=&dflag=Y&smid=&u=&c=&lf=&x=&hpe=Y\');"><i class="fa fa-trash" aria-hidden="true"></i></a><a class="hp-menulink" title="View Menu" href="' + dk + '"><i class="fa fa-external-link" aria-hidden="true"></i></a></div></div>');
+                    $(this).children('.hp-y').append('<div class="hp-z"><div class="hp-span"><a title="Edit Menu" href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=Menu&lid2=&level=1&pform=Menu&pkeyname=sys_menu_id&pkey=' + mk + '&fkeyname=&fkey=&wpage=&hpath=&eflag=Yes&fa=&sflag=&sortflag=&smid=&u=&c=&lf=&x=&hpe=Y#hpe_in_menu_x\',\'iframe\');"><i class="fa fa-pencil" aria-hidden="true"></i></a><a title="Add New Menu" href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=Menu&lid2=&level=1&pform=Menu&pkeyname=sys_menu_id&pkey=&fkeyname=&fkey=&eflag=Yes&wpage=&hpath=&smid=&u=&c=&lf=&x=&hpe=Y&vpx=' + dv + '&fpx=' + mon + '#hpe_in_new_menu\',\'iframe\');"><i class="fa fa-plus" aria-hidden="true"></i></a><a class="hp-menudelete" title="Delete Menu" href="#hp_editor" onclick="return confirmdelete(\'' + dl1 + ' Menu and<br>all associated Submenus and Articles' + dl2 + '\', \'/' + pdist + 'lid=Menu&lid2=&level=1&pform=Menu&dname=Menu&pkeyname=sys_menu_id&pkey=' + mk + '&wpage=1&hpath=&sflag=&sortflag=&fa=&dflag=Y&smid=&u=&c=&lf=&x=&hpe=Y\');"><i class="fa fa-trash" aria-hidden="true"></i></a><a class="hp-menulink" title="View Menu" href="' + dk + '"><i class="fa fa-external-link" aria-hidden="true"></i></a></div></div>');
                     if ($(this).attr('data-link') == '#' || $(this).attr('data-link').indexOf('javascript:void') != -1) { // If there is no link, then disable Menu Link button
                         $('.hp-menulink').css('display', 'none');
                     } else {
@@ -574,7 +574,7 @@ $(document).ready(function() {
                     var sk = $(this).attr('data-submenu');
                     var dk = $(this).attr('data-link');
                     var smon = $(this).attr('data-order-new');
-                    $(this).children('.hp-y').append('<div class="hp-z"><div class="hp-span"><a title="Edit Submenu" href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=Menu&lid2=&level=1&pform=Sub-Menu&pkeyname=sys_menu_sub_id&pkey=' + sk + '&fkeyname=sys_menu_id&fkey=' + mk + '&wpage=&hpath=&eflag=Yes&fa=&sflag=&sortflag=&smid=&u=&c=&lf=&x=&hpe=Y#hpe_in_submenu_x\',\'iframe\');"><i class="fa fa-pencil" aria-hidden="true"></i></a><a title="Add New Submenu" href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=Menu&lid2=&level=1&pform=Sub-Menu&pkeyname=sys_menu_sub_id&pkey=&fkeyname=sys_menu_id&fkey=' + mk + '&eflag=Yes&wpage=&hpath=&smid=&u=&c=&lf=&x=&hpe=Y&fpx=' + smon + '#hpe_in_new_submenu\',\'iframe\');"><i class="fa fa-plus" aria-hidden="true"></i></a><a class="hp-submenudelete" title="Delete Submenu" href="#hp_editor" onclick="return confirmdelete(\'' + dl1 + ' Submenu and all associated articles' + dl2 + '\', \'/' + pdist + 'lid=Menu&lid2=&level=2&pform=Sub-Menu&dname=Menu&pkeyname=sys_menu_sub_id&pkey=' + sk + '&wpage=1&hpath=&sflag=&sortflag=&fa=&dflag=Y&smid=&u=&c=&lf=&x=&hpe=Y\');"><i class="fa fa-trash" aria-hidden="true"></i></a><a title="View Submenu" href="' + dk + '"><i class="fa fa-external-link" aria-hidden="true"></i></a></div></div>');
+                    $(this).children('.hp-y').append('<div class="hp-z"><div class="hp-span"><a title="Edit Submenu" href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=Menu&lid2=&level=1&pform=Sub-Menu&pkeyname=sys_menu_sub_id&pkey=' + sk + '&fkeyname=sys_menu_id&fkey=' + mk + '&wpage=&hpath=&eflag=Yes&fa=&sflag=&sortflag=&smid=&u=&c=&lf=&x=&hpe=Y#hpe_in_submenu_x\',\'iframe\');"><i class="fa fa-pencil" aria-hidden="true"></i></a><a title="Add New Submenu" href="#hp_editor" onclick="clearCookieLB(); OpenBLPopup(\'/' + pfist + 'lid=Menu&lid2=&level=1&pform=Sub-Menu&pkeyname=sys_menu_sub_id&pkey=&fkeyname=sys_menu_id&fkey=' + mk + '&eflag=Yes&wpage=&hpath=&smid=&u=&c=&lf=&x=&hpe=Y&fpx=' + smon + '#hpe_in_new_submenu\',\'iframe\');"><i class="fa fa-plus" aria-hidden="true"></i></a><a class="hp-submenudelete" title="Delete Submenu" href="#hp_editor" onclick="return confirmdelete(\'' + dl1 + ' Submenu and<br>all associated articles' + dl2 + '\', \'/' + pdist + 'lid=Menu&lid2=&level=2&pform=Sub-Menu&dname=Menu&pkeyname=sys_menu_sub_id&pkey=' + sk + '&wpage=1&hpath=&sflag=&sortflag=&fa=&dflag=Y&smid=&u=&c=&lf=&x=&hpe=Y\');"><i class="fa fa-trash" aria-hidden="true"></i></a><a title="View Submenu" href="' + dk + '"><i class="fa fa-external-link" aria-hidden="true"></i></a></div></div>');
 
                 });
             }
@@ -4148,7 +4148,7 @@ $(document).ready(function() {
         });
         $('fieldset section').css('display', 'none');
         $('#subject').val(tfn + ' Form');
-        $('#message').attr('placeholder', 'Write issue/request regarding this Form...');
+        $('#message').attr('placeholder', 'Would you like to make changes to this form?  Give us your requirements or issues regarding this form.');
         $('.label.col.col-4').each(function() {
             if ($(this).text() == '* Issue, Request or Question' || $(this).text() == 'Attachment') {
                 $(this).parent('.row').parent('section').css('display', 'block');
@@ -4208,3 +4208,4 @@ $(document).ready(function() {
 });
 
 // END: Live Builder(Site Manager)
+
